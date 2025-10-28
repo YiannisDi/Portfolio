@@ -1,0 +1,60 @@
+/*TODO: Add different html pages for each project*/
+
+/*Main heading*/
+/* #region */
+.heading {
+	text-align: center;
+	padding-top: 2.5rem;
+}
+
+.heading h1 {
+	font-size: 3rem;
+	background: linear-gradient(135deg, #000dff 0%, #6600ff 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	animation: fadeInDown 1s ease-out;
+	transition: transform 0.2s ease;
+}
+
+.heading h1:hover {
+	transform: scale(1.01);
+}
+
+.heading h3 {
+	background: linear-gradient(135deg, #000dff 0%, #6600ff 100%);
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	font-weight: 400;
+	letter-spacing: 0.1rem;
+	animation: fadeInUp 1s ease-out 0.3s backwards;
+	transition: transform 0.5s ease;
+}
+
+.heading h3:hover {
+	transform: scale(1.01);
+}
+
+@keyframes fadeInDown {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+/* #endregion */

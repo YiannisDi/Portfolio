@@ -21,7 +21,7 @@ html {
 	--font-color: white;
 
 	--heading-color: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
-	--heading-description-color: rgba(255, 255, 255, 0.7);
+	--heading-description-color: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
 
 	--section-spacing: 7.5rem;
 	--title-border-color: rgba(255,255,255,0.25);
@@ -59,7 +59,7 @@ html {
 	--font-color: #1c1c1c;
 
 	--heading-color: linear-gradient(135deg, #000000 0%, #5f5f5f 100%);
-	--heading-description-color: rgba(0, 0, 0, 0.7);
+	--heading-description-color: linear-gradient(135deg, #000000 0%, #5f5f5f 100%);
 
 	--title-border-color: rgba(0, 0, 0, 0.25);
 	--title-border-color-hover: rgba(0, 0, 0, 0.45);
@@ -177,41 +177,54 @@ body::after {
 
 /* #endregion */
 
-/*Utility classes */
+/*Card class */
 /* #region */
 .card {
-	border: var(--card-border);
-	border-radius: var(--card-radius);
-	background: var(--card-bg);
-	color: var(--card-font-color);
-	padding: var(--card-padding);
-	transition: transform 0.2s ease,
-	        background 0.3s ease,
-	        box-shadow 0.3s ease,
-	        border-color 0.3s ease,
-	        color 0.5s ease;
+    border: var(--card-border);
+    border-radius: var(--card-radius);
+    background: var(--card-bg);
+    color: var(--card-font-color);
+    padding: var(--card-padding);
+    transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease, 
+                border-color 0.3s ease, color 0.5s ease, opacity 0.6s ease;
+}
+
+.card.fade-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.card.fade-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card:hover,
 .card:focus {
-	transform: translateY(-4px) scale(1.01);
-	box-shadow: 0 8px 16px var(--card-shadow-color);
-	background: var(--card-bg-hover);
-	outline: none;
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 8px 16px var(--card-shadow-color);
+    background: var(--card-bg-hover);
+    outline: none;
 }
 
 .card:focus-visible {
-	outline: 3px solid var(--card-focus-outline-color);
-	outline-offset: 0.25rem;
+    outline: 3px solid var(--card-focus-outline-color);
+    outline-offset: 0.25rem;
 }
 
+.card.skip-link {
+    opacity: 1;
+}
+/* #endregion */
+
+/*Link button class */
+/* #region */
 .link-btn {
 	position: relative;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	gap: 0.4rem;
-	margin-top: 0.1rem;
+	
 	padding: var(--link-padding);
 	border: var(--link-border);
 	border-radius: var(--link-radius);
@@ -219,13 +232,18 @@ body::after {
 	color: white;
 	font-weight: 600;
 	text-decoration: none;
+
 	transition: transform 0.2s ease, background 0.2s ease;
-	box-sizing: border-box;
+	
+	gap: 0.4rem;
+	margin-top: 0.1rem;
 	padding-left: 1.5rem;
 	min-width: 9rem;
 	min-height: 2.2rem;
+
 	cursor: pointer;
 	z-index: 1;
+	box-sizing: border-box;
 }
 
 .link-btn::before {
