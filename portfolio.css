@@ -197,6 +197,23 @@ footer {
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 }
+
+.project-category h2.icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.project-category h2.icon::before {
+	width: 24px;
+	height: 24px;
+	flex-shrink: 0;
+}
+
+.project-category h2.icon:hover::before {
+	transform: scale(1.1);
+}
 /* #endregion */
 
 /*Skills section*/
@@ -247,6 +264,23 @@ footer {
 	background-clip: text;
 }
 
+.skill-category h2.icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.skill-category h2.icon::before {
+	width: 24px;
+	height: 24px;
+	flex-shrink: 0;
+}
+
+.skill-category h2.icon:hover::before {
+	transform: scale(1.1);
+}
+
 .skill-category ol {
 	list-style: none;
 	padding: 0;
@@ -254,32 +288,8 @@ footer {
 }
 
 .skill-category li {
-	position: relative;
 	margin: 0.25rem 0;
-	padding-left: 2rem;
-	display: flex;
-	align-items: center;
 	transition: color 0.2s, transform 0.2s;
-}
-
-.skill-category li::before {
-	content: "";
-	position: absolute;
-	left: 0;
-	width: 20px;
-	height: 20px;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	transition: transform 0.2s ease;
-}
-
-body:not(.lightmode) .skill-category li::before {
-	filter: invert(1) brightness(1);
-}
-
-.lightmode .skill-category li::before {
-	filter: none;
 }
 
 .skill-category li:hover { 
@@ -287,68 +297,22 @@ body:not(.lightmode) .skill-category li::before {
 	transform: translateY(-2px) scale(1.01);
 }
 
-.skill-category li:hover::before {
+.skill-category li.icon {
+	padding-left: 2rem;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.skill-category li.icon::before {
+	position: absolute;
+	left: 0;
+	width: 20px;
+	height: 20px;
+}
+
+.skill-category li.icon:hover::before {
 	transform: scale(1.1);
-}
-
-.skill-category li[data-skill="html"]::before {
-	background-image: url("assets/icons/html.svg");
-}
-
-.skill-category li[data-skill="css"]::before {
-	background-image: url("assets/icons/css.svg");
-}
-
-.skill-category li[data-skill="javascript"]::before {
-	background-image: url("assets/icons/javascript.svg");
-}
-
-.skill-category li[data-skill="react"]::before {
-	background-image: url("assets/icons/react.svg");
-}
-
-.skill-category li[data-skill="nextjs"]::before {
-	background-image: url("assets/icons/nextjs.svg");
-}
-
-.skill-category li[data-skill="figma"]::before {
-	background-image: url("assets/icons/figma.svg");
-}
-
-.skill-category li[data-skill="adobexd"]::before {
-	background-image: url("assets/icons/adobexd.png");
-}
-
-.skill-category li[data-skill="tailwind"]::before {
-	background-image: url("assets/icons/tailwindcss.svg");
-}
-
-.skill-category li[data-skill="inkscape"]::before {
-	background-image: url("assets/icons/inkscape.svg");
-}
-
-.skill-category li[data-skill="aseprite"]::before {
-	background-image: url("assets/icons/aseprite.svg");
-}
-
-.skill-category li[data-skill="git"]::before {
-	background-image: url("assets/icons/git.svg");
-}
-
-.skill-category li[data-skill="vscode"]::before {
-	background-image: url("assets/icons/vscode.png");
-}
-
-.skill-category li[data-skill="nodejs"]::before {
-	background-image: url("assets/icons/nodejs.svg");
-}
-
-.skill-category li[data-skill="vite"]::before {
-	background-image: url("assets/icons/vite.svg");
-}
-
-.skill-category li[data-skill="vim"]::before {
-	background-image: url("assets/icons/vim.svg");
 }
 /* #endregion */
 
@@ -412,30 +376,44 @@ body:not(.lightmode) .skill-category li::before {
 	justify-content: center;
 	gap: 0.5rem;
 	min-height: 2.5rem;
-	text-decoration: none;
-	padding: 0.75rem 0.8rem 0.75rem 2rem;
+	padding: 0.75rem 0.8rem 0.75rem 2.5rem;
 	text-align: center;
 	font-weight: 600;
+	font-size: 1.25rem;
+	text-decoration: none;
 	box-sizing: border-box;
 }
 
 .contact-btn::before {
 	content: "";
 	position: absolute;
-	left: 12px;
-	width: 20px;
-	height: 20px;
+	left: 14px;
+	width: 30px;
+	height: 30px;
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
+	transition: transform 0.2s ease;
+}
+
+body:not(.lightmode) .contact-btn::before {
+	filter: invert(1) brightness(1);
+}
+
+.lightmode .contact-btn::before {
+	filter: none;
+}
+
+.contact-btn:hover::before {
+	transform: scale(1.1);
 }
 
 .contact-btn[href*="mailto"]::before {
-	background-image: url("assets/icons/email.png");
+	background-image: url("assets/icons/gmail.svg");
 }
 
 .contact-btn[href*="github"]::before {
-	background-image: url("assets/icons/github.png");
+	background-image: url("assets/icons/github.svg");
 }
 
 .contact-btn[href*="linkedin"]::before {
@@ -443,7 +421,7 @@ body:not(.lightmode) .skill-category li::before {
 }
 
 .contact-btn[href*="x.com"]::before {
-	background-image: url("assets/icons/twitter.png");
+	background-image: url("assets/icons/x.svg");
 }
 
 .contact-info {

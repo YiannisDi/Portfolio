@@ -18,7 +18,7 @@ html {
 
 	--body-bg: var(--body-bg-dark);
 	--scrollbar-color: white;
-	--font-color: white;
+	--font-color: rgb(225, 225, 225);
 
 	--heading-color: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
 	--heading-description-color: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
@@ -33,7 +33,7 @@ html {
 	--soundscape-project-color: linear-gradient(135deg, #ffffff 0%,#ffd70066 100%);
 	--pathfinder-project-color: linear-gradient(135deg, #ffffff 0%,#00ffff66 100%);
 
-	--skill-list-color: #fff;
+	--skill-list-color: #ffffff;
 	--frontend-skill-color: linear-gradient(135deg, #ffffff 0%, #193a8d 100%);
 	--design-skill-color: linear-gradient(135deg, #ffffff 0%, #147932 100%); 
 	--dev-skill-color: linear-gradient(135deg, #ffffff 0%, #711515 100%);  
@@ -42,6 +42,7 @@ html {
 	--footer-font-color: rgba(255,255,255,0.6);
 	
 	--theme-bg: rgb(50, 50, 50);
+	--theme-hover-bg: rgb(70, 70, 70);
 
 	--card-bg: rgba(255, 255, 255, 0.03);
 	--card-bg-hover: rgba(255,255,255,0.06);
@@ -86,6 +87,7 @@ html {
 	--footer-font-color: rgba(0, 0, 0, 0.6);
 
 	--theme-bg: rgb(205, 205, 205);
+	--theme-hover-bg: rgb(165, 165, 165);
 
 	--card-bg: rgba(0, 0, 0, 0.03);
 	--card-bg-hover: rgba(0, 0, 0, 0.06);
@@ -162,6 +164,7 @@ body::after {
 }
 
 #theme-switch:hover {
+	background: var(--theme-hover-bg);
 	transform: scale(1.05);
 	outline: none;
 	cursor: pointer;
@@ -288,6 +291,60 @@ body::after {
 	outline: 2px solid rgba(255,255,255,0.5);
 	outline-offset: 0.15rem;
 }
+/* #endregion */
+
+/*Icon System*/
+/* #region */
+.icon {
+	position: relative;
+	transition: transform 0.2s ease;
+}
+
+.icon::before {
+	content: "";
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+body:not(.lightmode) .icon::before {
+	filter: invert(1) brightness(1);
+}
+
+.lightmode .icon::before {
+	filter: none;
+}
+
+.icon-nebula::before { background-image: url("assets/icons/galaxy.png"); }
+.icon-soundscape::before { background-image: url("assets/icons/sound.png"); }
+.icon-pathfinder::before { background-image: url("assets/icons/maps.png"); }
+
+.icon-frontend::before { background-image: url("assets/icons/dev.svg"); }
+.icon-design::before { background-image: url("assets/icons/design.png"); }
+.icon-development::before { background-image: url("assets/icons/monitor.png"); }
+
+.icon-html::before { background-image: url("assets/icons/html.svg"); }
+.icon-css::before { background-image: url("assets/icons/css.svg"); }
+.icon-javascript::before { background-image: url("assets/icons/javascript.svg"); }
+.icon-react::before { background-image: url("assets/icons/react.svg"); }
+.icon-nextjs::before { background-image: url("assets/icons/nextjs.svg"); }
+.icon-figma::before { background-image: url("assets/icons/figma.svg"); }
+.icon-adobexd::before { background-image: url("assets/icons/adobexd.png"); }
+.icon-tailwind::before { background-image: url("assets/icons/tailwindcss.svg"); }
+.icon-inkscape::before { background-image: url("assets/icons/inkscape.svg"); }
+.icon-aseprite::before { background-image: url("assets/icons/aseprite.svg"); }
+.icon-git::before { background-image: url("assets/icons/git.svg"); }
+.icon-vscode::before { background-image: url("assets/icons/vscode.png"); }
+.icon-nodejs::before { background-image: url("assets/icons/nodejs.svg"); }
+.icon-vite::before { background-image: url("assets/icons/vite.svg"); }
+.icon-vim::before { background-image: url("assets/icons/vim.svg"); }
+
+.icon-email::before { background-image: url("assets/icons/gmail.svg"); }
+.icon-github::before { background-image: url("assets/icons/github.svg"); }
+.icon-linkedin::before { background-image: url("assets/icons/linkedin.png"); }
+.icon-twitter::before { background-image: url("assets/icons/x.svg"); }
+
+.icon-external::before { background-image: url("assets/icons/external-link.png"); }
 /* #endregion */
 
 /*Accecibility */
