@@ -1,23 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.card');
+  const containers = [
+    document.querySelector('.project-groups'),
+    document.querySelector('.skill-groups'),
+    document.querySelector('.experience-groups'),
+    document.querySelector('.contact-links')
+  ].filter(Boolean);
 
-    cards.forEach(card => {
-        card.classList.add('fade-hidden');
-    });
+  const animatedContainers = new Set();
 
-    const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-visible');
-                observer.unobserve(entry.target);
-            }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !animatedContainers.has(entry.target)) {
+        animatedContainers.add(entry.target);
+        
+        const cards = entry.target.querySelectorAll('.card');
+        cards.forEach((card, index) => {
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.translate = '0 0';
+          }, index * 100);
         });
-    }, observerOptions);
+      }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: '0px 0px -50px 0px'
+  });
 
-    cards.forEach(card => observer.observe(card));
+  containers.forEach(container => {
+    const cards = container.querySelectorAll('.card');
+    cards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.translate = '0 5vh';
+      card.style.transition = 'opacity 0.6s ease, translate 0.6s ease';
+    });
+    
+    observer.observe(container);
+  });
 });

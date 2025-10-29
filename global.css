@@ -203,17 +203,7 @@ body::after {
     color: var(--card-font-color);
     padding: var(--card-padding);
     transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease, 
-                border-color 0.3s ease, color 0.5s ease, opacity 0.6s ease;
-}
-
-.card.fade-hidden {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.card.fade-visible {
-    opacity: 1;
-    transform: translateY(0);
+                border-color 0.3s ease, color 0.5s ease;
 }
 
 .card:hover,
@@ -232,6 +222,7 @@ body::after {
 .card.skip-link {
     opacity: 1;
 }
+
 /* #endregion */
 
 /*Link button class */
