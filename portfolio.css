@@ -57,11 +57,11 @@
 }
 /* #endregion */
 
-/*General classes */
+/*General classes*/
 /* #region */
 .site-wrapper {
-    width: 100%;
-    min-height: 100vh;
+	width: 100%;
+	min-height: 100vh;
 }
 
 section {
@@ -74,12 +74,11 @@ section {
 	font-size: 2rem;
 	border-bottom: 2px solid var(--title-border-color);
 	padding-bottom: 1rem;
-	transition: border-color 0.3s ease, transform 0.3s ease;
-
 	background: var(--title-font-color);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
+	transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
 .section-title:hover {
@@ -135,12 +134,11 @@ footer {
 }
 /* #endregion */
 
-/*About section */
+/*About section*/
 /* #region */
 .about {
 	max-width: 50rem;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 	padding: 1rem 2rem;
 	text-align: center;
 }
@@ -151,7 +149,7 @@ footer {
 }
 /* #endregion */
 
-/*Project section */
+/*Project section*/
 /* #region */
 .projects {
 	text-align: center;
@@ -168,18 +166,52 @@ footer {
 	flex: 0 1 300px;
 	max-width: 18rem;
 	min-width: 17rem;
-	max-height: 20rem;
-    min-height: 20rem;
+	height: 20rem;
+}
+
+.project-category.nebula {
+    box-shadow: 0px 0px 6px rgba(102, 0, 255, 0.4), 
+                0px 0px 8px rgba(0, 71, 171, 0.3);
+}
+
+.project-category.soundscape {
+    box-shadow: 0px 0px 6px rgba(255, 215, 0, 0.4), 
+                0px 0px 8px rgba(255, 255, 255, 0.2);
+}
+
+.project-category.pathfinder {
+    box-shadow: 0px 0px 6px rgba(0, 255, 255, 0.4), 
+                0px 0px 8px rgba(34, 139, 34, 0.3);
+}
+
+.project-category.nebula h2 {
+	background: var(--nebula-project-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.project-category.soundscape h2 {
+	background: var(--soundscape-project-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.project-category.pathfinder h2 {
+	background: var(--pathfinder-project-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
 }
 /* #endregion */
 
-/*Skills section */
+/*Skills section*/
 /* #region */
 .skills {
 	text-align: center;
 	max-width: 100rem;
 }
-
 
 .skill-groups {
 	margin-top: 1.5rem;
@@ -191,10 +223,41 @@ footer {
 	flex: 0 1 300px;
 	max-width: 13rem;
 	min-width: 13rem;
-	max-height: 16em;
-    min-height: 16rem;
+	height: 16rem;
 }
 
+.frontend {
+	box-shadow: 0px 0px 8px rgba(15, 67, 149, 0.3);
+}
+
+.design {
+	box-shadow: 0px 0px 8px rgba(15, 149, 66, 0.3);
+}
+
+.dev {
+	box-shadow: 0px 0px 8px rgba(149, 15, 15, 0.3);
+}
+
+.skill-category.frontend h2 {
+	background: var(--frontend-skill-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.skill-category.design h2 {
+	background: var(--design-skill-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.skill-category.dev h2 {
+	background: var(--dev-skill-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
 
 .skill-category ol {
 	list-style: none;
@@ -203,17 +266,105 @@ footer {
 }
 
 .skill-category li {
+	position: relative;
 	margin: 0.25rem 0;
+	padding-left: 2rem;
+	display: flex;
+	align-items: center;
 	transition: color 0.2s, transform 0.2s;
 }
-   
+
+.skill-category li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: transform 0.2s ease;
+}
+
+body:not(.lightmode) .skill-category li::before {
+	filter: invert(1) brightness(1);
+}
+
+.lightmode .skill-category li::before {
+	filter: none;
+}
+
 .skill-category li:hover { 
-     color: var(--skill-list-color); 
-     transform: translateY(-2px) scale(1.01);
+	color: var(--skill-list-color); 
+	transform: translateY(-2px) scale(1.01);
+}
+
+.skill-category li:hover::before {
+	transform: scale(1.1);
+}
+
+.skill-category li[data-skill="html"]::before {
+	background-image: url("assets/icons/html.svg");
+}
+
+.skill-category li[data-skill="css"]::before {
+	background-image: url("assets/icons/css.svg");
+}
+
+.skill-category li[data-skill="javascript"]::before {
+	background-image: url("assets/icons/javascript.svg");
+}
+
+.skill-category li[data-skill="react"]::before {
+	background-image: url("assets/icons/react.svg");
+}
+
+.skill-category li[data-skill="nextjs"]::before {
+	background-image: url("assets/icons/nextjs.svg");
+}
+
+.skill-category li[data-skill="figma"]::before {
+	background-image: url("assets/icons/figma.svg");
+}
+
+.skill-category li[data-skill="adobexd"]::before {
+	background-image: url("assets/icons/adobexd.png");
+}
+
+.skill-category li[data-skill="tailwind"]::before {
+	background-image: url("assets/icons/tailwindcss.svg");
+}
+
+.skill-category li[data-skill="inkscape"]::before {
+	background-image: url("assets/icons/inkscape.svg");
+}
+
+.skill-category li[data-skill="aseprite"]::before {
+	background-image: url("assets/icons/aseprite.svg");
+}
+
+.skill-category li[data-skill="git"]::before {
+	background-image: url("assets/icons/git.svg");
+}
+
+.skill-category li[data-skill="vscode"]::before {
+	background-image: url("assets/icons/vscode.png");
+}
+
+.skill-category li[data-skill="nodejs"]::before {
+	background-image: url("assets/icons/nodejs.svg");
+}
+
+.skill-category li[data-skill="vite"]::before {
+	background-image: url("assets/icons/vite.svg");
+}
+
+.skill-category li[data-skill="vim"]::before {
+	background-image: url("assets/icons/vim.svg");
 }
 /* #endregion */
 
-/*Experience section */
+/*Experience section*/
 /* #region */
 .experience {
 	text-align: center;
@@ -230,8 +381,7 @@ footer {
 	flex: 0 1 300px;
 	max-width: 23rem;
 	min-width: 22rem;
-	max-height: 20rem;
-    min-height: 20rem;
+	height: 20rem;
 }
 
 .experience-category ol {
@@ -250,7 +400,7 @@ footer {
 }
 /* #endregion */
 
-/*Contact section */
+/*Contact section*/
 /* #region */
 .contact {
 	text-align: center;
