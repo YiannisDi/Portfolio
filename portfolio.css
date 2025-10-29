@@ -66,7 +66,6 @@
 
 section {
 	margin-top: var(--section-spacing);
-	max-width: 90rem;
 	padding: 0 2rem;
 }
 
@@ -90,10 +89,9 @@ section {
 .skill-groups,
 .experience-groups,
 .contact-groups {
-	display: flex;
+	display: grid;
+	gap: 3rem;
 	justify-content: center;
-	align-items: flex-start;
-	flex-wrap: wrap;
 }
 
 .project-category,
@@ -153,19 +151,14 @@ footer {
 /* #region */
 .projects {
 	text-align: center;
-	max-width: 100rem;
 }
 
 .project-groups {
-	gap: 3rem;
-	text-align: center;
+	grid-template-columns: repeat(auto-fit, minmax(17rem, 18rem));
 	margin-top: 1rem;
 }
 
 .project-category {
-	flex: 0 1 300px;
-	max-width: 18rem;
-	min-width: 17rem;
 	height: 20rem;
 }
 
@@ -210,19 +203,14 @@ footer {
 /* #region */
 .skills {
 	text-align: center;
-	max-width: 100rem;
 }
 
 .skill-groups {
+	grid-template-columns: repeat(auto-fit, minmax(13rem, 13rem));
 	margin-top: 1.5rem;
-	max-width: 87.5rem;
 }
 
 .skill-category {
-	margin-left: 3rem;
-	flex: 0 1 300px;
-	max-width: 13rem;
-	min-width: 13rem;
 	height: 16rem;
 }
 
@@ -369,18 +357,14 @@ body:not(.lightmode) .skill-category li::before {
 .experience {
 	text-align: center;
 	align-items: center;
-	max-width: 94.5rem;
 }
 
 .experience-groups {
+	grid-template-columns: repeat(auto-fit, minmax(22rem, 23rem));
 	margin-top: 1rem;
-	gap: 3rem;
 }
 
 .experience-category {
-	flex: 0 1 300px;
-	max-width: 23rem;
-	min-width: 22rem;
 	height: 20rem;
 }
 
@@ -406,10 +390,10 @@ body:not(.lightmode) .skill-category li::before {
 	text-align: center;
 	padding: 1rem;
 	box-sizing: border-box;
-	max-width: 95rem;
 }
 
 .contact-groups {
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 36rem));
 	gap: 40px;
 	margin-top: 30px;
 }
@@ -419,8 +403,6 @@ body:not(.lightmode) .skill-category li::before {
 	flex-direction: column;
 	align-items: stretch;
 	gap: 1rem;
-	min-width: 20rem;
-	max-width: 23rem;
 }
 
 .contact-btn {
@@ -465,7 +447,6 @@ body:not(.lightmode) .skill-category li::before {
 }
 
 .contact-info {
-	max-width: 36rem;
 	text-align: center;
 	align-self: center;
 	box-sizing: border-box;
@@ -473,7 +454,6 @@ body:not(.lightmode) .skill-category li::before {
 }
 
 .contact-info p {
-	max-width: 50rem;
 	margin: 0 auto;
 } 
 /* #endregion */
