@@ -1,3 +1,5 @@
+/*Global CSS file */
+
 /*Root and vars*/
 /* #region */
 html {
@@ -74,14 +76,14 @@ html {
 	--title-font-color: linear-gradient(135deg, #000000 0%, #181818 100%);
 	--description-color: rgba(0, 0, 0, 0.9);
 
-	--nebula-project-color: linear-gradient(135deg, #1c1c1c 0%, #6600ff 100%);
-	--soundscape-project-color: linear-gradient(135deg, #1c1c1c 0%,#ffd70066 100%);
-	--pathfinder-project-color: linear-gradient(135deg, #1c1c1c 0%,#00ffff66 100%);
+	--nebula-project-color: linear-gradient(135deg, #4a4a4a 0%, #6600ff 100%);
+	--soundscape-project-color: linear-gradient(135deg, #4a4a4a 0%, #ffa500 100%);
+	--pathfinder-project-color: linear-gradient(135deg, #4a4a4a 0%, #00b8b8 100%);
 
 	--skill-list-color: #000000;
-	--frontend-skill-color: linear-gradient(135deg, #1c1c1c 0%, #193a8d 100%);
-	--design-skill-color: linear-gradient(135deg, #1c1c1c 0%, #147932 100%); 
-	--dev-skill-color: linear-gradient(135deg, #1c1c1c 0%, #711515 100%);  
+	--frontend-skill-color: linear-gradient(135deg, #4a4a4a 0%, #193a8d 100%);
+	--design-skill-color: linear-gradient(135deg, #4a4a4a 0%, #147932 100%); 
+	--dev-skill-color: linear-gradient(135deg, #4a4a4a 0%, #711515 100%);
 	
 	--footer-bg: rgba(0, 0, 0, 0.05);
 	--footer-font-color: rgba(0, 0, 0, 0.6);
@@ -110,6 +112,7 @@ body {
 	line-height: 1.6;
 	transition: color 0.5s ease;
 	overflow-x: hidden;
+	margin: 0;
 }
 
 body::before,
