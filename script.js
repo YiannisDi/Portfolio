@@ -18,6 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
           setTimeout(() => {
             card.style.opacity = '1';
             card.style.translate = '0 0';
+            
+            // Clean up inline styles after animation completes
+            setTimeout(() => {
+              card.style.removeProperty('opacity');
+              card.style.removeProperty('translate');
+              card.style.removeProperty('transition');
+            }, 600); // Match your transition duration
           }, index * 100);
         });
       }

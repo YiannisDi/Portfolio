@@ -1,3 +1,5 @@
+/*Portfolio CSS file*/
+
 /*Main heading*/
 /* #region */
 .heading {
@@ -160,6 +162,15 @@ footer {
 
 .project-category {
 	height: 20rem;
+	justify-content: space-between;
+}
+
+.project-category p {
+	flex-grow: 1;
+}
+
+.project-category .link-btn {
+	margin-top: auto;
 }
 
 .project-category.nebula {
@@ -231,15 +242,15 @@ footer {
 	height: 16rem;
 }
 
-.frontend {
+.skill-category.frontend {
 	box-shadow: 0px 0px 8px rgba(15, 67, 149, 0.3);
 }
 
-.design {
+.skill-category.design {
 	box-shadow: 0px 0px 8px rgba(15, 149, 66, 0.3);
 }
 
-.dev {
+.skill-category.dev {
 	box-shadow: 0px 0px 8px rgba(149, 15, 15, 0.3);
 }
 
