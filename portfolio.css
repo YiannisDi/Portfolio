@@ -174,18 +174,18 @@ footer {
 }
 
 .project-category.nebula {
-    box-shadow: 0px 0px 6px rgba(102, 0, 255, 0.4), 
-                0px 0px 8px rgba(0, 71, 171, 0.3);
+    box-shadow: 0px 0px 4px rgba(102, 0, 255, 0.4), 
+                0px 0px 6px rgba(0, 71, 171, 0.3);
 }
 
 .project-category.soundscape {
-    box-shadow: 0px 0px 6px rgba(255, 215, 0, 0.4), 
-                0px 0px 8px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 4px rgba(255, 215, 0, 0.4), 
+                0px 0px 6px rgba(255, 255, 255, 0.2);
 }
 
 .project-category.pathfinder {
-    box-shadow: 0px 0px 6px rgba(0, 255, 255, 0.4), 
-                0px 0px 8px rgba(34, 139, 34, 0.3);
+    box-shadow: 0px 0px 4px rgba(0, 255, 255, 0.4), 
+                0px 0px 6px rgba(34, 139, 34, 0.3);
 }
 
 .project-category.nebula h2 {
