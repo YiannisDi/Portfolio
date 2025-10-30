@@ -27,7 +27,7 @@
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	font-weight: 400;
-	letter-spacing: 0.1rem;
+	letter-spacing: 0.15rem;
 	animation: fadeInUp 1s ease-out 0.3s backwards;
 	transition: transform 0.5s ease;
 }
@@ -62,8 +62,12 @@
 /*General classes*/
 /* #region */
 .site-wrapper {
-	width: 100%;
-	min-height: 100vh;
+  animation: fadeIn 1.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 section {
@@ -344,7 +348,7 @@ footer {
 }
 
 .experience-category ol {
-	list-style: circle;
+	list-style:inside;
 	padding: 0.5rem;
 	margin: 0;
 }

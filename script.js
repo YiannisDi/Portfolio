@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					});
 				}
 			} else {
-				//not intersecting so do nohting I guess
+				//not intersecting so do nohting i guess
 			}
 		});
 	}, {

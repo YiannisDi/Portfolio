@@ -49,6 +49,7 @@ html {
 	--card-bg: rgba(255, 255, 255, 0.03);
 	--card-bg-hover: rgba(255,255,255,0.06);
 	--card-border: 0.1rem solid rgba(255,255,255,0.15);
+	--card-border-hover: 0.1rem solid rgba(255,255,255,0.25);
 	--card-radius: 0.4rem; 
 	--card-padding: 0.6rem 0.8rem;
 	--card-font-color: white;
@@ -94,6 +95,7 @@ html {
 	--card-bg: rgba(0, 0, 0, 0.03);
 	--card-bg-hover: rgba(0, 0, 0, 0.06);
 	--card-border: 0.1rem solid rgba(0, 0, 0, 0.15);
+	--card-border-hover: 0.1rem solid rgba(0, 0, 0, 0.25);
 	--card-font-color: #1c1c1c;
 	--card-shadow-color: rgba(0, 0, 0, 0.25);
 	--card-focus-outline-color: rgba(41, 41, 41, 0.12);
@@ -113,6 +115,7 @@ body {
 	transition: color 0.5s ease;
 	overflow-x: hidden;
 	margin: 0;
+	transition: background 0.5s ease, color 0.5s ease;
 }
 
 body::before,
@@ -214,7 +217,8 @@ body::after {
     transform: translateY(-4px) scale(1.01);
     box-shadow: 0 8px 16px var(--card-shadow-color);
     background: var(--card-bg-hover);
-    outline: none;
+	border: var(--card-border-hover);
+	outline: none;
 }
 
 .card:focus-visible {
@@ -287,7 +291,7 @@ body::after {
 }
 /* #endregion */
 
-/*Icon System*/
+/*Icon System class*/
 /* #region */
 .icon {
 	position: relative;
@@ -307,6 +311,16 @@ body:not(.lightmode) .icon::before {
 
 .lightmode .icon::before {
 	filter: none;
+}
+
+@keyframes iconWobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+.icon:hover::before {
+  animation: iconWobble 0.5s ease;
 }
 
 .icon-nebula::before { background-image: url("assets/icons/galaxy.png"); }
@@ -345,13 +359,16 @@ body:not(.lightmode) .icon::before {
 /* #region */
 .skip-link {
   position: absolute;
-  top: 40px;
+  top: -100px;
   left: 16px;
   padding: 8px;
   z-index: 100;
+  opacity: 0;
+  transition: top 0.3s ease, opacity 0.3s ease;
 }
 .skip-link:focus {
-  top: 40px;
+  top: 80px; 
+  opacity: 1;
 }
 /* #endregion */
 
@@ -425,6 +442,15 @@ footer p {
 @media (max-width: 768px) {
 	html { font-size: 16px; }
 
+	#theme-switch {
+		top: 0.75rem;
+		right: 0.75rem;
+		height: 3.5rem;
+		width: 3.5rem;
+	}
+	.skip-link {
+		display: none;
+	}
     .project-groups, .skill-groups, .experience-groups {
         flex-direction: column;
         align-items: center;
